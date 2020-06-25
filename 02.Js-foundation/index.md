@@ -97,3 +97,41 @@ for (let i = 5; i > 1; i++) {
   ```
   
   **Memory is limited!**
+  
+  ## JS is single thread
+  
+  Js là ngôn ngữ chạy đơn luồng, chỉ có 1 callstack làm nhiệm vụ giữ vị trí code hiện tại, không thể chạy nhiều hàm cùng lúc 
+  
+  ==> Synchronous, one at a time in order
+  
+  ==> Asynchronous
+  
+  ## JS runtime | Asynchronous code
+  
+  - Web API (Web browser api): 
+    
+    - DOM
+    
+    - fetch()
+    
+    - setTimeout()
+      
+      Web api có sẵn cùng với trình duyệt. Web api cung cấp nhiều tiện ích như thao tác dom, tạo http request, delay 1 hàm, setInterval, caching hoặc database storage trên chính trình duyệt
+      
+      Xem window object, tổng hợp toàn bộ api mà trình duyệt cung cấp
+      
+      - fetch()
+      
+      - indexedDB: 1 csdl trên trình duyệt
+      
+      Trình duyệt sử dụng ngôn ngữ low level như C++ để xử lý các tác vụ trong nền, không ảnh hưởng đến thread của ngôn ngữ JS ==> Asynchronous
+      
+      ```js
+      console.log('1');
+      setTimout(() => {
+          console.log('2')
+      }, 1000);
+      console.log('3');
+      ```
+      
+      
